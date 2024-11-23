@@ -659,14 +659,14 @@ QPushButton:default {
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>0</y>
+                <y>-1</y>
                 <width>331</width>
-                <height>80</height>
+                <height>81</height>
                </rect>
               </property>
               <property name="styleSheet">
                <string notr="true">QLabel {
-    border: 1px solid #215740;
+    border: none;
     border-radius: 4px;
 	background-color:none;
 }</string>
