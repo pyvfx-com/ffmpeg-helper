@@ -21,5 +21,5 @@
   </p>
 </div>
 
-<h3 align="leeft"><b>Application interface</b></h3>
+<h3 align="left"><b>Application interface</b></h3>
 ![Screenshot](https://github.com/pyvfx-com/ffmpeg-helper/blob/main/screenshot/1.png)
