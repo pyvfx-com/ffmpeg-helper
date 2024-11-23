@@ -10,13 +10,13 @@
   <p align="center">
     An awesome ffmpeg-helper which can ofset your audio with songle click and export.
     <br />
-    <a href="https://github.com/"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/pyvfx-com/ffmpeg-helper/projects?query=is%3Aopen"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/">View Demo</a>
+    <a href="https://github.com/pyvfx-com/ffmpeg-helper/pulls">Pull request</a>
     ·
-    <a href="https://github.com/">Report Bug</a>
+    <a href="https://github.com/pyvfx-com/ffmpeg-helper/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/">Request Feature</a>
+    <a href="https://github.com/pyvfx-com/ffmpeg-helper/issues">Request Feature</a>
   </p>
 </div>
