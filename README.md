@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="[ffmpeg-helper](https://github.com/pyvfx-com/ffmpeg-helper)">
-    <img src="/icon/logo.png" alt="Logo" width="80" height="80">
+    <img src="icon/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">ffmpeg-helper</h3>
@@ -20,3 +20,6 @@
     <a href="https://github.com/pyvfx-com/ffmpeg-helper/issues">Request Feature</a>
   </p>
 </div>
+
+<h3 align="leeft"><b>Application interface</b></h3>
+![Screenshot](screenshot/1.png)
