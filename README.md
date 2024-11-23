@@ -22,4 +22,4 @@
 </div>
 
 <h3 align="leeft"><b>Application interface</b></h3>
-![Screenshot](screenshot/1.png)
+![Screenshot](/screenshot/1.png)
