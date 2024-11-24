@@ -37,6 +37,11 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
         self.player = QMediaPlayer()
         self.audio = QAudioOutput()
 
+        # Connect media player signals
+        self.player.positionChanged.connect(self.position_changed)
+        self.player.durationChanged.connect(self.duration_changed)
+        self.playSlider.sliderMoved.connect(self.playSliderChanged)
+
         # Connect the media status changed signal
         self.player.mediaStatusChanged.connect(self.handle_media_status)
 
@@ -98,6 +103,12 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
         # Set the formatted time in the label
         self.label_play_remain.setText(time.toString("hh:mm:ss"))
 
+    def position_changed(self, position):
+        if self.playSlider.maximum() != self.player.duration():
+            self.playSlider.setMaximum(self.player.duration())
+
+        self.playSlider.setValue(position)
+
     def backward(self):
         # Get current position in milliseconds
         current_position_ms = self.player.position()
@@ -140,6 +151,11 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
                 # If repeat is not enabled, stop the player
                 self.player.stop()
 
+    def duration_changed(self, duration):
+        self.playSlider.setRange(0, duration)
+
+    def playSliderChanged(self, position):
+        self.player.setPosition(position)
 
 # For widgets
 if __name__ == '__main__':
