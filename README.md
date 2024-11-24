@@ -27,5 +27,16 @@
 
 ![interface](https://raw.githubusercontent.com/pyvfx-com/ffmpeg-helper/sunnov-2424_update_with_slideer_progress_bar/screenshot/audio-ofseter.gif)
 
+
+
+
+
+
+
+
+
+
+
+
 ![interface](https://raw.githubusercontent.com/pyvfx-com/ffmpeg-helper/sunnov-2424_update_with_slideer_progress_bar/screenshot/ffmpeg_footer.png)
 <br>
