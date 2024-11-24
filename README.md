@@ -20,12 +20,12 @@
     <a href="https://github.com/pyvfx-com/ffmpeg-helper/issues">Request Feature</a>
   </p>
 </div>
-
+<div align="center">
 <h3 align="left"><b>Application interface</b></h3>
 
 ![interface](https://raw.githubusercontent.com/pyvfx-com/ffmpeg-helper/main/screenshot/1.png)
 
-<div align="center">
+
 
 ![hyde_banner](https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/hyde_banner.png)
 
