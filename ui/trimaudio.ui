@@ -650,176 +650,373 @@ QPushButton:default {
              <property name="frameShadow">
               <enum>QFrame::Shadow::Raised</enum>
              </property>
-             <widget class="QLabel" name="overlay">
-              <property name="geometry">
-               <rect>
-                <x>0</x>
-                <y>-1</y>
-                <width>331</width>
-                <height>81</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QLabel {
-    border: none;
-    border-radius: 4px;
-	background-color:none;
-}</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../icon/resources.qrc">:/icons/top.png</pixmap>
-              </property>
-             </widget>
-             <widget class="QLabel" name="weve">
-              <property name="geometry">
-               <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>331</width>
-                <height>81</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QLabel {
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QSlider" name="playSlider">
+                <property name="styleSheet">
+                 <string notr="true">QSlider {
+    background-color: rgb(0, 85, 0, 0);
+}
+</string>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item>
+                 <spacer name="verticalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>10</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0">
+                  <item>
+                   <widget class="QLabel" name="label_play_time">
+                    <property name="styleSheet">
+                     <string notr="true"> QLabel {
+	color: rgb(150, 150, 150);
 	border : none;
     border-radius: none;
 	background-color:none;
-	width: 140px;
-	height: 90px;
 }</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../icon/resources.qrc">:/icons/wave.png</pixmap>
-              </property>
-             </widget>
-             <zorder>weve</zorder>
-             <zorder>overlay</zorder>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="Line" name="line">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Vertical</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_play_remain">
+                    <property name="styleSheet">
+                     <string notr="true"> QLabel {
+	color: rgb(150, 150, 150);
+	border : none;
+    border-radius: none;
+	background-color:none;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>17</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>3</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>3</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>3</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_back_seeek">
+                    <property name="minimumSize">
+                     <size>
+                      <width>27</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>25</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	color:#4A702B;
+    border: 1px solid #215740;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #151616, stop: 1 #1C1D1C);
+    min-width: 25px;
+    min-height: 23px;
+}
+
+QPushButton:hover {
+	color: #151616;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #4A702B, stop: 1 #215740);	
+}
+
+QPushButton:pressed {
+    color: #4A702B;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #1C1D1C, stop: 1 #151616);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../icon/resources.qrc">
+                      <normaloff>:/icons/backword.png</normaloff>:/icons/backword.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_play">
+                    <property name="minimumSize">
+                     <size>
+                      <width>27</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>25</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	color:#4A702B;
+    border: 1px solid #215740;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #151616, stop: 1 #1C1D1C);
+    min-width: 25px;
+    min-height: 23px;
+}
+
+QPushButton:hover {
+	color: #151616;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #4A702B, stop: 1 #215740);	
+}
+
+QPushButton:pressed {
+    color: #4A702B;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #1C1D1C, stop: 1 #151616);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../icon/resources.qrc">
+                      <normaloff>:/icons/play.png</normaloff>:/icons/play.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_seek">
+                    <property name="minimumSize">
+                     <size>
+                      <width>27</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>25</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	color:#4A702B;
+    border: 1px solid #215740;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #151616, stop: 1 #1C1D1C);
+    min-width: 25px;
+    min-height: 23px;
+}
+
+QPushButton:hover {
+	color: #151616;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #4A702B, stop: 1 #215740);	
+}
+
+QPushButton:pressed {
+    color: #4A702B;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #1C1D1C, stop: 1 #151616);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../icon/resources.qrc">
+                      <normaloff>:/icons/forward.png</normaloff>:/icons/forward.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_repeat">
+                    <property name="minimumSize">
+                     <size>
+                      <width>27</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>25</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	color:#4A702B;
+    border: 1px solid #215740;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #151616, stop: 1 #1C1D1C);
+    min-width: 25px;
+    min-height: 23px;
+}
+
+QPushButton:hover {
+	color: #151616;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #4A702B, stop: 1 #215740);	
+}
+
+QPushButton:pressed {
+    color: #4A702B;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #1C1D1C, stop: 1 #151616);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../icon/resources.qrc">
+                      <normaloff>:/icons/replay.png</normaloff>:/icons/replay.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>4</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_2">
-             <property name="spacing">
-              <number>0</number>
+            <widget class="QPushButton" name="pushButton">
+             <property name="minimumSize">
+              <size>
+               <width>120</width>
+               <height>80</height>
+              </size>
              </property>
-             <item>
-              <spacer name="verticalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>10</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0">
-               <item>
-                <widget class="QLabel" name="label_play_time">
-                 <property name="styleSheet">
-                  <string notr="true"> QLabel {
-	color: rgb(150, 150, 150);
-	border : none;
-    border-radius: none;
-	background-color:none;
-}</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignmentFlag::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="Line" name="line">
-                 <property name="orientation">
-                  <enum>Qt::Orientation::Vertical</enum>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_play_remain">
-                 <property name="styleSheet">
-                  <string notr="true"> QLabel {
-	color: rgb(150, 150, 150);
-	border : none;
-    border-radius: none;
-	background-color:none;
-}</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignmentFlag::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <spacer name="verticalSpacer_3">
-               <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>17</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout">
-               <property name="spacing">
-                <number>5</number>
-               </property>
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>0</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
-                <number>3</number>
-               </property>
-               <item>
-                <widget class="QPushButton" name="pushButton_back_seeek">
-                 <property name="minimumSize">
-                  <size>
-                   <width>27</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>25</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QPushButton {
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
 	color:#4A702B;
     border: 1px solid #215740;
     border-radius: 4px;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #151616, stop: 1 #1C1D1C);
-    min-width: 25px;
-    min-height: 23px;
+
 }
 
 QPushButton:hover {
@@ -841,194 +1038,11 @@ QPushButton:flat {
 QPushButton:default {
     border-color: navy; /* make the default button prominent */
 }</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../icon/resources.qrc">
-                   <normaloff>:/icons/backword.png</normaloff>:/icons/backword.png</iconset>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushButton_play">
-                 <property name="minimumSize">
-                  <size>
-                   <width>27</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>25</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QPushButton {
-	color:#4A702B;
-    border: 1px solid #215740;
-    border-radius: 4px;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #151616, stop: 1 #1C1D1C);
-    min-width: 25px;
-    min-height: 23px;
-}
-
-QPushButton:hover {
-	color: #151616;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #4A702B, stop: 1 #215740);	
-}
-
-QPushButton:pressed {
-    color: #4A702B;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #1C1D1C, stop: 1 #151616);
-}
-
-QPushButton:flat {
-    border: none; /* no border for a flat push button */
-}
-
-QPushButton:default {
-    border-color: navy; /* make the default button prominent */
-}</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../icon/resources.qrc">
-                   <normaloff>:/icons/play.png</normaloff>:/icons/play.png</iconset>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushButton_seek">
-                 <property name="minimumSize">
-                  <size>
-                   <width>27</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>25</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QPushButton {
-	color:#4A702B;
-    border: 1px solid #215740;
-    border-radius: 4px;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #151616, stop: 1 #1C1D1C);
-    min-width: 25px;
-    min-height: 23px;
-}
-
-QPushButton:hover {
-	color: #151616;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #4A702B, stop: 1 #215740);	
-}
-
-QPushButton:pressed {
-    color: #4A702B;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #1C1D1C, stop: 1 #151616);
-}
-
-QPushButton:flat {
-    border: none; /* no border for a flat push button */
-}
-
-QPushButton:default {
-    border-color: navy; /* make the default button prominent */
-}</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../icon/resources.qrc">
-                   <normaloff>:/icons/forward.png</normaloff>:/icons/forward.png</iconset>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushButton_repeat">
-                 <property name="minimumSize">
-                  <size>
-                   <width>27</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>25</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QPushButton {
-	color:#4A702B;
-    border: 1px solid #215740;
-    border-radius: 4px;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #151616, stop: 1 #1C1D1C);
-    min-width: 25px;
-    min-height: 23px;
-}
-
-QPushButton:hover {
-	color: #151616;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #4A702B, stop: 1 #215740);	
-}
-
-QPushButton:pressed {
-    color: #4A702B;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #1C1D1C, stop: 1 #151616);
-}
-
-QPushButton:flat {
-    border: none; /* no border for a flat push button */
-}
-
-QPushButton:default {
-    border-color: navy; /* make the default button prominent */
-}</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../icon/resources.qrc">
-                   <normaloff>:/icons/replay.png</normaloff>:/icons/replay.png</iconset>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <spacer name="verticalSpacer">
-               <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>4</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
+             </property>
+             <property name="text">
+              <string>Publish</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>

@@ -1,13 +1,9 @@
-from PyQt5.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PyQt5.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QSpacerItem, QToolButton, QVBoxLayout, QWidget)
+from PyQt5.QtCore import (QCoreApplication,QMetaObject, QSize, Qt)
+from PyQt5.QtGui import (QFont, QIcon)
+from PyQt5.QtWidgets import (QFrame, QGridLayout, QHBoxLayout,QLabel, QLineEdit, QPushButton, QSizePolicy,
+    QSlider, QSpacerItem, QToolButton, QVBoxLayout)
+
+
 
 class Ui_audio_ofset(object):
     def setupUi(self, audio_ofset):
@@ -415,30 +411,17 @@ class Ui_audio_ofset(object):
 "}")
         self.frame_Controls.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_Controls.setFrameShadow(QFrame.Shadow.Raised)
-        self.overlay = QLabel(self.frame_Controls)
-        self.overlay.setObjectName(u"overlay")
-        self.overlay.setGeometry(QRect(0, -1, 331, 81))
-        self.overlay.setStyleSheet(u"QLabel {\n"
-"    border: none;\n"
-"    border-radius: 4px;\n"
-"	background-color:none;\n"
-"}")
-        self.overlay.setPixmap(QPixmap(u":/icons/top.png"))
-        self.weve = QLabel(self.frame_Controls)
-        self.weve.setObjectName(u"weve")
-        self.weve.setGeometry(QRect(0, 0, 331, 81))
-        self.weve.setStyleSheet(u"QLabel {\n"
-"	border : none;\n"
-"    border-radius: none;\n"
-"	background-color:none;\n"
-"	width: 140px;\n"
-"	height: 90px;\n"
-"}")
-        self.weve.setPixmap(QPixmap(u":/icons/wave.png"))
-        self.weve.raise_()
-        self.overlay.raise_()
+        self.verticalLayout_4 = QVBoxLayout(self.frame_Controls)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.playSlider = QSlider(self.frame_Controls)
+        self.playSlider.setObjectName(u"playSlider")
+        self.playSlider.setStyleSheet(u"QSlider {\n"
+"    background-color: rgb(0, 85, 0, 0);\n"
+"}\n"
+"")
+        self.playSlider.setOrientation(Qt.Orientation.Horizontal)
 
-        self.audio_spectrum_horizontalLayout.addWidget(self.frame_Controls)
+        self.verticalLayout_4.addWidget(self.playSlider)
 
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setSpacing(0)
@@ -449,7 +432,7 @@ class Ui_audio_ofset(object):
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.label_play_time = QLabel(self.audio_spectrum_view)
+        self.label_play_time = QLabel(self.frame_Controls)
         self.label_play_time.setObjectName(u"label_play_time")
         self.label_play_time.setStyleSheet(u" QLabel {\n"
 "	color: rgb(150, 150, 150);\n"
@@ -461,14 +444,14 @@ class Ui_audio_ofset(object):
 
         self.horizontalLayout_2.addWidget(self.label_play_time)
 
-        self.line = QFrame(self.audio_spectrum_view)
+        self.line = QFrame(self.frame_Controls)
         self.line.setObjectName(u"line")
         self.line.setFrameShape(QFrame.Shape.VLine)
         self.line.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.horizontalLayout_2.addWidget(self.line)
 
-        self.label_play_remain = QLabel(self.audio_spectrum_view)
+        self.label_play_remain = QLabel(self.frame_Controls)
         self.label_play_remain.setObjectName(u"label_play_remain")
         self.label_play_remain.setStyleSheet(u" QLabel {\n"
 "	color: rgb(150, 150, 150);\n"
@@ -491,7 +474,7 @@ class Ui_audio_ofset(object):
         self.horizontalLayout.setSpacing(5)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(3, 0, 3, 3)
-        self.pushButton_back_seeek = QPushButton(self.audio_spectrum_view)
+        self.pushButton_back_seeek = QPushButton(self.frame_Controls)
         self.pushButton_back_seeek.setObjectName(u"pushButton_back_seeek")
         self.pushButton_back_seeek.setMinimumSize(QSize(27, 25))
         self.pushButton_back_seeek.setMaximumSize(QSize(25, 25))
@@ -530,7 +513,7 @@ class Ui_audio_ofset(object):
 
         self.horizontalLayout.addWidget(self.pushButton_back_seeek)
 
-        self.pushButton_play = QPushButton(self.audio_spectrum_view)
+        self.pushButton_play = QPushButton(self.frame_Controls)
         self.pushButton_play.setObjectName(u"pushButton_play")
         self.pushButton_play.setMinimumSize(QSize(27, 25))
         self.pushButton_play.setMaximumSize(QSize(25, 25))
@@ -569,7 +552,7 @@ class Ui_audio_ofset(object):
 
         self.horizontalLayout.addWidget(self.pushButton_play)
 
-        self.pushButton_seek = QPushButton(self.audio_spectrum_view)
+        self.pushButton_seek = QPushButton(self.frame_Controls)
         self.pushButton_seek.setObjectName(u"pushButton_seek")
         self.pushButton_seek.setMinimumSize(QSize(27, 25))
         self.pushButton_seek.setMaximumSize(QSize(25, 25))
@@ -608,7 +591,7 @@ class Ui_audio_ofset(object):
 
         self.horizontalLayout.addWidget(self.pushButton_seek)
 
-        self.pushButton_repeat = QPushButton(self.audio_spectrum_view)
+        self.pushButton_repeat = QPushButton(self.frame_Controls)
         self.pushButton_repeat.setObjectName(u"pushButton_repeat")
         self.pushButton_repeat.setMinimumSize(QSize(27, 25))
         self.pushButton_repeat.setMaximumSize(QSize(25, 25))
@@ -655,7 +638,45 @@ class Ui_audio_ofset(object):
         self.verticalLayout_2.addItem(self.verticalSpacer)
 
 
-        self.audio_spectrum_horizontalLayout.addLayout(self.verticalLayout_2)
+        self.verticalLayout_4.addLayout(self.verticalLayout_2)
+
+
+        self.audio_spectrum_horizontalLayout.addWidget(self.frame_Controls)
+
+        self.pushButton = QPushButton(self.audio_spectrum_view)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setMinimumSize(QSize(120, 80))
+        self.pushButton.setMaximumSize(QSize(150, 80))
+        self.pushButton.setStyleSheet(u"QPushButton {\n"
+"	color:#4A702B;\n"
+"    border: 1px solid #215740;\n"
+"    border-radius: 4px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #151616, stop: 1 #1C1D1C);\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	color: #151616;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #4A702B, stop: 1 #215740);	\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    color: #4A702B;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #1C1D1C, stop: 1 #151616);\n"
+"}\n"
+"\n"
+"QPushButton:flat {\n"
+"    border: none; /* no border for a flat push button */\n"
+"}\n"
+"\n"
+"QPushButton:default {\n"
+"    border-color: navy; /* make the default button prominent */\n"
+"}")
+
+        self.audio_spectrum_horizontalLayout.addWidget(self.pushButton)
 
 
         self.verticalLayout_3.addLayout(self.audio_spectrum_horizontalLayout)
@@ -680,17 +701,8 @@ class Ui_audio_ofset(object):
         self.label_TrackName.setText(QCoreApplication.translate("audio_ofset", u"Track Name", None))
         self.pushButton_trackNameReset.setText(QCoreApplication.translate("audio_ofset", u"Reset", None))
         self.label_offset.setText(QCoreApplication.translate("audio_ofset", u"Offset", None))
-        self.pushButton_prevFrame.setText("")
         self.lineEdit_offset_frame.setPlaceholderText(QCoreApplication.translate("audio_ofset", u"offset start frame", None))
         self.lineEdit_tail_offset_frame.setPlaceholderText(QCoreApplication.translate("audio_ofset", u"offset tail frame", None))
-        self.PushButton_nextFrame.setText("")
         self.pushButton_frameReset.setText(QCoreApplication.translate("audio_ofset", u"Reset", None))
-        self.overlay.setText("")
-        self.weve.setText("")
-        self.label_play_time.setText(QCoreApplication.translate("audio_ofset", u"0:01:05", None))
-        self.label_play_remain.setText(QCoreApplication.translate("audio_ofset", u"0:01:35", None))
-        self.pushButton_back_seeek.setText("")
-        self.pushButton_play.setText("")
-        self.pushButton_seek.setText("")
-        self.pushButton_repeat.setText("")
+        self.pushButton.setText(QCoreApplication.translate("audio_ofset", u"Publish", None))
     # retranslateUi
