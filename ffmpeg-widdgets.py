@@ -53,6 +53,12 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
 
         self.pushButton_repeat.clicked.connect(self.toggle_repeat)
 
+        # Reset buttons conneect
+        self.pushButton_track_pathReset.clicked.connect(self.trackPath_reset)
+        self.pushButton_trackNameReset.clicked.connect(self.track_reset)
+        self.pushButton_frameReset.clicked.connect(self.ofseet_reset)
+
+
     def get_folder(self):
         file_name, _ = QFileDialog.getOpenFileName(
             self, 'Audio file', r"", "*.mp3 *.wav")
@@ -71,7 +77,7 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
 
     def play_music(self):
         icon_play = QIcon(":/icons/play.png")
-        icon_pause = QIcon(":/icons/play_pause.png")
+        icon_pause = QIcon(":/icons/pause.png")
 
         if self.player.state() == QMediaPlayer.PlayingState:
             self.player.pause()
@@ -132,7 +138,7 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
 
     def toggle_repeat(self):
         # Toggle the repeat mode
-        icon_repeat_on = QIcon(":/icons/record.png")
+        icon_repeat_on = QIcon(":/icons/replay_act.png")
         icon_repeat_off = QIcon(":/icons/replay.png")
         self.repeat_enabled = not self.repeat_enabled
 
@@ -156,6 +162,19 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
 
     def playSliderChanged(self, position):
         self.player.setPosition(position)
+
+    def ofseet_reset(self):
+        self.lineEdit_tail_offset_frame.setText("")
+        self.lineEdit_offset_frame.setText("")
+
+    def track_reset(self):
+        self.lineEdit_trackName.setText("")
+        self.ofseet_reset()
+
+    def trackPath_reset(self):
+        self.lineEdit_path.setText("")
+        self.track_reset()
+
 
 # For widgets
 if __name__ == '__main__':

@@ -1,7 +1,8 @@
 <RCC>
   <qresource prefix="icons">
-    <file>play-pause.png</file>
     <file>wave.png</file>
+    <file>pause.png</file>
+    <file>replay_act.png</file>
     <file>bottom.png</file>
     <file>top.png</file>
     <file>next.png</file>

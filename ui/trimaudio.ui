@@ -55,10 +55,7 @@
 }</string>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Shape::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Shadow::Raised</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="spacing">
@@ -86,10 +83,7 @@
 }</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
+         <enum>QFrame::NoFrame</enum>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <property name="spacing">
@@ -114,6 +108,7 @@
              <property name="font">
               <font>
                <pointsize>8</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -267,6 +262,7 @@ QPushButton:default {
              <property name="font">
               <font>
                <pointsize>8</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -368,6 +364,7 @@ QPushButton:default {
              <property name="font">
               <font>
                <pointsize>8</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -400,6 +397,7 @@ QPushButton:default {
              </property>
              <property name="font">
               <font>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -467,9 +465,6 @@ QPushButton:default {
     selection-background-color: #212121;
 }</string>
              </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
              <property name="placeholderText">
               <string>offset start frame</string>
              </property>
@@ -499,14 +494,11 @@ QPushButton:default {
     selection-background-color: #212121;
 }</string>
              </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
              <property name="placeholderText">
               <string>offset tail frame</string>
              </property>
              <property name="cursorMoveStyle">
-              <enum>Qt::CursorMoveStyle::VisualMoveStyle</enum>
+              <enum>Qt::LogicalMoveStyle</enum>
              </property>
             </widget>
            </item>
@@ -526,6 +518,7 @@ QPushButton:default {
              </property>
              <property name="font">
               <font>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -645,22 +638,63 @@ QPushButton:default {
 }</string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::Shape::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
+              <enum>QFrame::NoFrame</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_4">
+              <property name="spacing">
+               <number>2</number>
+              </property>
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>5</number>
+              </property>
+              <property name="rightMargin">
+               <number>5</number>
+              </property>
+              <property name="bottomMargin">
+               <number>5</number>
+              </property>
               <item>
                <widget class="QSlider" name="playSlider">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>4</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>4</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">QSlider {
     background-color: rgb(0, 85, 0, 0);
 }
-</string>
+
+QSlider::groove:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+}
+
+QSlider::handle:horizontal {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #4A702B, stop: 1 #215740);	
+    border: 1px solid #5c5c5c;
+    width: 1px;
+    margin: -5px 0;
+    border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal {
+    background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #4A702B, stop: 1 #215740);
+}</string>
                 </property>
                 <property name="orientation">
-                 <enum>Qt::Orientation::Horizontal</enum>
+                 <enum>Qt::Horizontal</enum>
                 </property>
                </widget>
               </item>
@@ -669,19 +703,6 @@ QPushButton:default {
                 <property name="spacing">
                  <number>0</number>
                 </property>
-                <item>
-                 <spacer name="verticalSpacer_2">
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>10</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0">
                   <item>
@@ -698,14 +719,14 @@ QPushButton:default {
                      <string/>
                     </property>
                     <property name="alignment">
-                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="Line" name="line">
                     <property name="orientation">
-                     <enum>Qt::Orientation::Vertical</enum>
+                     <enum>Qt::Vertical</enum>
                     </property>
                    </widget>
                   </item>
@@ -723,24 +744,11 @@ QPushButton:default {
                      <string/>
                     </property>
                     <property name="alignment">
-                     <set>Qt::AlignmentFlag::AlignCenter</set>
+                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
                  </layout>
-                </item>
-                <item>
-                 <spacer name="verticalSpacer_3">
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>17</height>
-                   </size>
-                  </property>
-                 </spacer>
                 </item>
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout">
@@ -759,6 +767,19 @@ QPushButton:default {
                   <property name="bottomMargin">
                    <number>3</number>
                   </property>
+                  <item>
+                   <spacer name="horizontalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                   <item>
                    <widget class="QPushButton" name="pushButton_back_seeek">
                     <property name="minimumSize">
@@ -975,20 +996,20 @@ QPushButton:default {
                     </property>
                    </widget>
                   </item>
+                  <item>
+                   <spacer name="horizontalSpacer_2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                  </layout>
-                </item>
-                <item>
-                 <spacer name="verticalSpacer">
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>4</height>
-                   </size>
-                  </property>
-                 </spacer>
                 </item>
                </layout>
               </item>
