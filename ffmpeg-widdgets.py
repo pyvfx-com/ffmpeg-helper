@@ -164,15 +164,19 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
         self.player.setPosition(position)
 
     def ofseet_reset(self):
-        self.lineEdit_tail_offset_frame.setText("")
-        self.lineEdit_offset_frame.setText("")
+        self.lineEdit_tail_offset_frame.clear()
+        self.lineEdit_offset_frame.clear()
 
     def track_reset(self):
-        self.lineEdit_trackName.setText("")
+        self.lineEdit_trackName.clear()
         self.ofseet_reset()
 
     def trackPath_reset(self):
-        self.lineEdit_path.setText("")
+        self.pushButton_back_seeek.setEnabled(False)
+        self.pushButton_play.setEnabled(False)
+        self.pushButton_seek.setEnabled(False)
+        self.pushButton_repeat.setEnabled(False)
+        self.lineEdit_path.clear()
         self.track_reset()
 
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\trimaudio.ui'
+# Form implementation generated from reading ui file 'trimaudio.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -397,11 +397,27 @@ class Ui_audio_ofset(object):
         self.verticalLayout_4.setContentsMargins(5, 5, 5, 5)
         self.verticalLayout_4.setSpacing(2)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setSpacing(2)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.label_play_time = QtWidgets.QLabel(self.frame_Controls)
+        self.label_play_time.setStyleSheet(" QLabel {\n"
+"    color: rgb(150, 150, 150);\n"
+"    border : none;\n"
+"    border-radius: none;\n"
+"    background-color:none;\n"
+"}")
+        self.label_play_time.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_play_time.setObjectName("label_play_time")
+        self.horizontalLayout_2.addWidget(self.label_play_time)
         self.playSlider = QtWidgets.QSlider(self.frame_Controls)
         self.playSlider.setMinimumSize(QtCore.QSize(0, 4))
-        self.playSlider.setMaximumSize(QtCore.QSize(16777215, 4))
+        self.playSlider.setMaximumSize(QtCore.QSize(200, 4))
         self.playSlider.setStyleSheet("QSlider {\n"
 "    background-color: rgb(0, 85, 0, 0);\n"
+"    border-radius: 4px;\n"
 "}\n"
 "\n"
 "QSlider::groove:horizontal {\n"
@@ -423,28 +439,7 @@ class Ui_audio_ofset(object):
 "}")
         self.playSlider.setOrientation(QtCore.Qt.Horizontal)
         self.playSlider.setObjectName("playSlider")
-        self.verticalLayout_4.addWidget(self.playSlider)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setSpacing(0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.label_play_time = QtWidgets.QLabel(self.frame_Controls)
-        self.label_play_time.setStyleSheet(" QLabel {\n"
-"    color: rgb(150, 150, 150);\n"
-"    border : none;\n"
-"    border-radius: none;\n"
-"    background-color:none;\n"
-"}")
-        self.label_play_time.setText("")
-        self.label_play_time.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_play_time.setObjectName("label_play_time")
-        self.horizontalLayout_2.addWidget(self.label_play_time)
-        self.line = QtWidgets.QFrame(self.frame_Controls)
-        self.line.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line.setObjectName("line")
-        self.horizontalLayout_2.addWidget(self.line)
+        self.horizontalLayout_2.addWidget(self.playSlider)
         self.label_play_remain = QtWidgets.QLabel(self.frame_Controls)
         self.label_play_remain.setStyleSheet(" QLabel {\n"
 "    color: rgb(150, 150, 150);\n"
@@ -452,13 +447,17 @@ class Ui_audio_ofset(object):
 "    border-radius: none;\n"
 "    background-color:none;\n"
 "}")
-        self.label_play_remain.setText("")
         self.label_play_remain.setAlignment(QtCore.Qt.AlignCenter)
         self.label_play_remain.setObjectName("label_play_remain")
         self.horizontalLayout_2.addWidget(self.label_play_remain)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
+        self.line = QtWidgets.QFrame(self.frame_Controls)
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.verticalLayout_2.addWidget(self.line)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
-        self.horizontalLayout.setContentsMargins(3, 0, 3, 3)
+        self.horizontalLayout.setContentsMargins(3, 3, 3, 3)
         self.horizontalLayout.setSpacing(5)
         self.horizontalLayout.setObjectName("horizontalLayout")
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -672,4 +671,6 @@ class Ui_audio_ofset(object):
         self.lineEdit_offset_frame.setPlaceholderText(_translate("audio_ofset", "offset start frame"))
         self.lineEdit_tail_offset_frame.setPlaceholderText(_translate("audio_ofset", "offset tail frame"))
         self.pushButton_frameReset.setText(_translate("audio_ofset", "Reset"))
+        self.label_play_time.setText(_translate("audio_ofset", "0:00:0"))
+        self.label_play_remain.setText(_translate("audio_ofset", "0:00:0"))
         self.pushButton.setText(_translate("audio_ofset", "Publish"))
