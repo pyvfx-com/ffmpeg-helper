@@ -117,7 +117,6 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
         if self.player.state() == QMediaPlayer.PlayingState:
             self.player.pause()
             self.pushButton_play.setIcon(icon_play)
-
         else:
             self.player.play()
             self.pushButton_play.setIcon(icon_pause)
@@ -206,11 +205,20 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
         self.ofseet_reset()
 
     def trackPath_reset(self):
+        icon_play = QIcon(":/icons/play.png")
         self.pushButton_back_seeek.setEnabled(False)
         self.pushButton_play.setEnabled(False)
         self.pushButton_seek.setEnabled(False)
         self.pushButton_repeat.setEnabled(False)
         self.lineEdit_path.clear()
+
+        # Reset the QMediaPlayer
+        if self.player is not None:
+            self.player.stop()
+            self.pushButton_play.setIcon(icon_play)
+            self.label_play_remain.setText("0:00:0")
+            self.player = QMediaPlayer()
+
         self.track_reset()
 
 
