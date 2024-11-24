@@ -25,8 +25,7 @@
 
 ![interface](https://raw.githubusercontent.com/pyvfx-com/ffmpeg-helper/main/screenshot/1.png)
 
+![interface](https://raw.githubusercontent.com/pyvfx-com/ffmpeg-helper/sunnov-2424_update_with_slideer_progress_bar/screenshot/audio-ofseter.gif)
 
-
-![hyde_banner](https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/hyde_banner.png)
-
+![interface](https://raw.githubusercontent.com/pyvfx-com/ffmpeg-helper/sunnov-2424_update_with_slideer_progress_bar/screenshot/ffmpeg_footer.png)
 <br>
