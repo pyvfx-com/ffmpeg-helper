@@ -27,8 +27,7 @@ class AudioWaveformVisualizer(QWidget):
         self.load_audio_file()
 
     def load_audio_file(self):
-
-        audio_file = "C:\\Users\\Rion0\\github\\Audio-triming\\audio\\relaxing_guitar_loop.wav"
+        audio_file = "/home/rion/dev/ffmpeg-helper/audio/relaxing_guitar_loop.wav"
 
         if audio_file:
             # Load the audio file using librosa
