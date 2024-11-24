@@ -278,8 +278,8 @@ class Ui_audio_ofset(object):
         self.pushButton_prevFrame.setObjectName("pushButton_prevFrame")
         self.offset_horizontalLayout.addWidget(self.pushButton_prevFrame)
         self.lineEdit_offset_frame = QtWidgets.QLineEdit(self.audio_spectrum_view)
-        self.lineEdit_offset_frame.setMinimumSize(QtCore.QSize(124, 25))
-        self.lineEdit_offset_frame.setMaximumSize(QtCore.QSize(124, 25))
+        self.lineEdit_offset_frame.setMinimumSize(QtCore.QSize(253, 25))
+        self.lineEdit_offset_frame.setMaximumSize(QtCore.QSize(253, 25))
         self.lineEdit_offset_frame.setStyleSheet("QLineEdit {\n"
 "    color: #548f54;\n"
 "    border: 1px solid #215740;\n"
@@ -288,22 +288,9 @@ class Ui_audio_ofset(object):
 "    background: #212121;\n"
 "    selection-background-color: #212121;\n"
 "}")
+        self.lineEdit_offset_frame.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_offset_frame.setObjectName("lineEdit_offset_frame")
         self.offset_horizontalLayout.addWidget(self.lineEdit_offset_frame)
-        self.lineEdit_tail_offset_frame = QtWidgets.QLineEdit(self.audio_spectrum_view)
-        self.lineEdit_tail_offset_frame.setMinimumSize(QtCore.QSize(124, 25))
-        self.lineEdit_tail_offset_frame.setMaximumSize(QtCore.QSize(124, 25))
-        self.lineEdit_tail_offset_frame.setStyleSheet("QLineEdit {\n"
-"    color: #548f54;\n"
-"    border: 1px solid #215740;\n"
-"    border-radius: 4px;\n"
-"    padding: 0 8px;\n"
-"    background: #212121;\n"
-"    selection-background-color: #212121;\n"
-"}")
-        self.lineEdit_tail_offset_frame.setCursorMoveStyle(QtCore.Qt.LogicalMoveStyle)
-        self.lineEdit_tail_offset_frame.setObjectName("lineEdit_tail_offset_frame")
-        self.offset_horizontalLayout.addWidget(self.lineEdit_tail_offset_frame)
         self.PushButton_nextFrame = QtWidgets.QPushButton(self.audio_spectrum_view)
         self.PushButton_nextFrame.setMinimumSize(QtCore.QSize(27, 25))
         self.PushButton_nextFrame.setMaximumSize(QtCore.QSize(25, 25))
@@ -382,6 +369,7 @@ class Ui_audio_ofset(object):
         self.offset_horizontalLayout.addWidget(self.pushButton_frameReset)
         self.verticalLayout_3.addLayout(self.offset_horizontalLayout)
         self.audio_spectrum_horizontalLayout = QtWidgets.QHBoxLayout()
+        self.audio_spectrum_horizontalLayout.setSpacing(8)
         self.audio_spectrum_horizontalLayout.setObjectName("audio_spectrum_horizontalLayout")
         self.frame_Controls = QtWidgets.QFrame(self.audio_spectrum_view)
         self.frame_Controls.setMinimumSize(QtCore.QSize(332, 80))
@@ -668,8 +656,7 @@ class Ui_audio_ofset(object):
         self.label_TrackName.setText(_translate("audio_ofset", "Track Name"))
         self.pushButton_trackNameReset.setText(_translate("audio_ofset", "Reset"))
         self.label_offset.setText(_translate("audio_ofset", "Offset"))
-        self.lineEdit_offset_frame.setPlaceholderText(_translate("audio_ofset", "offset start frame"))
-        self.lineEdit_tail_offset_frame.setPlaceholderText(_translate("audio_ofset", "offset tail frame"))
+        self.lineEdit_offset_frame.setPlaceholderText(_translate("audio_ofset", "offset frame"))
         self.pushButton_frameReset.setText(_translate("audio_ofset", "Reset"))
         self.label_play_time.setText(_translate("audio_ofset", "0:00:0"))
         self.label_play_remain.setText(_translate("audio_ofset", "0:00:0"))

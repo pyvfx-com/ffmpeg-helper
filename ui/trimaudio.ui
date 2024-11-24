@@ -445,13 +445,13 @@ QPushButton:default {
             <widget class="QLineEdit" name="lineEdit_offset_frame">
              <property name="minimumSize">
               <size>
-               <width>124</width>
+               <width>253</width>
                <height>25</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>124</width>
+               <width>253</width>
                <height>25</height>
               </size>
              </property>
@@ -465,40 +465,11 @@ QPushButton:default {
     selection-background-color: #212121;
 }</string>
              </property>
-             <property name="placeholderText">
-              <string>offset start frame</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_tail_offset_frame">
-             <property name="minimumSize">
-              <size>
-               <width>124</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>124</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
-    color: #548f54;
-    border: 1px solid #215740;
-    border-radius: 4px;
-    padding: 0 8px;
-    background: #212121;
-    selection-background-color: #212121;
-}</string>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
              <property name="placeholderText">
-              <string>offset tail frame</string>
-             </property>
-             <property name="cursorMoveStyle">
-              <enum>Qt::LogicalMoveStyle</enum>
+              <string>offset frame</string>
              </property>
             </widget>
            </item>
@@ -616,6 +587,9 @@ QPushButton:default {
          </item>
          <item>
           <layout class="QHBoxLayout" name="audio_spectrum_horizontalLayout">
+           <property name="spacing">
+            <number>8</number>
+           </property>
            <item>
             <widget class="QFrame" name="frame_Controls">
              <property name="minimumSize">

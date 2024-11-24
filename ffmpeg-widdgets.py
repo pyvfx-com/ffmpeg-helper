@@ -3,8 +3,8 @@ import os
 
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import QMediaPlayer, QAudioOutput, QMediaContent
-from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import QUrl, QTime
+from PyQt5.QtGui import QIcon, QRegExpValidator
+from PyQt5.QtCore import QUrl, QTime, QRegExp
 
 from datetime import datetime
 from ui.trimaudio import Ui_audio_ofset
@@ -22,10 +22,18 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
     def __init__(self):
         super(audioTrimmer, self).__init__()
         self.setupUi(self)
+
+        rx  = QRegExp("[0-9]{30}")
+        validator = QRegExpValidator(rx)
+        self.lineEdit_offset_frame.setValidator(validator)
+
         self.pushButton_play.setEnabled(False)
         self.pushButton_repeat.setEnabled(False)
         self.pushButton_back_seeek.setEnabled(False)
         self.pushButton_seek.setEnabled(False)
+        self.PushButton_nextFrame.setEnabled(False)
+        self.pushButton_prevFrame.setEnabled(False)
+
 
 
         self.toolButton_select_track.clicked.connect(self.get_folder)
@@ -58,6 +66,28 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
         self.pushButton_trackNameReset.clicked.connect(self.track_reset)
         self.pushButton_frameReset.clicked.connect(self.ofseet_reset)
 
+        # setting the aofset value from here.
+        self.PushButton_nextFrame.clicked.connect(self.inc_frameNumber)
+        self.pushButton_prevFrame.clicked.connect(self.dec_frameNumber)
+
+
+    def inc_frameNumber(self):
+        current_value = self.lineEdit_offset_frame.text()
+        if current_value == "" or current_value == "0":
+            self.counter = 1
+        else:
+            self.counter = int(current_value) + 1
+
+        self.lineEdit_offset_frame.setText(str(self.counter))
+
+    def dec_frameNumber(self):
+        current_value = self.lineEdit_offset_frame.text()
+        if current_value == "" or current_value == "0":
+            self.counter = 0
+        else:
+            self.counter = max(0, int(current_value) - 1)
+
+        self.lineEdit_offset_frame.setText(str(self.counter))
 
     def get_folder(self):
         file_name, _ = QFileDialog.getOpenFileName(
@@ -70,10 +100,15 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
             self.pushButton_repeat.setEnabled(True)
             self.pushButton_back_seeek.setEnabled(True)
             self.pushButton_seek.setEnabled(True)
+            self.PushButton_nextFrame.setEnabled(True)
+            self.pushButton_prevFrame.setEnabled(True)
 
         self.lineEdit_path.setText(file_name)
         self.lineEdit_trackName.setText(file_name.split("/")[-1].split(".")[0])
         return file_name
+
+    def ofset_value(self):
+        pass
 
     def play_music(self):
         icon_play = QIcon(":/icons/play.png")
@@ -164,7 +199,6 @@ class audioTrimmer(Ui_audio_ofset, QWidget):
         self.player.setPosition(position)
 
     def ofseet_reset(self):
-        self.lineEdit_tail_offset_frame.clear()
         self.lineEdit_offset_frame.clear()
 
     def track_reset(self):
