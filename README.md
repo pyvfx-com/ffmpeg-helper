@@ -23,5 +23,5 @@
 
 <h3 align="left"><b>Application interface</b></h3>
 
-![Screenshot](https://raw.githubusercontent.com/pyvfx-com/ffmpeg-helper/main/screenshot/1.png)
+![interface](https://raw.githubusercontent.com/pyvfx-com/ffmpeg-helper/main/screenshot/1.png)
 
