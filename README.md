@@ -25,3 +25,8 @@
 
 ![interface](https://raw.githubusercontent.com/pyvfx-com/ffmpeg-helper/main/screenshot/1.png)
 
+<div align="center">
+
+![hyde_banner](https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/hyde_banner.png)
+
+<br>
